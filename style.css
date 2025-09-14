@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Game Mode */
+#modeSelect button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #4facfe;
+  color: white;
+  transition: 0.3s;
+}
+#modeSelect button:hover {
+  background: #00c3ff;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Status */
+#status {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 15px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cell.marked {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); }
+  100% { transform: scale(1); }
+}
+
+/* Winning highlight */
+.win {
+  background: #90ee90 !important;
+}
+button {
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #00c3ff;
+}
+@media (max-width: 500px) {
+  .board {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+  }
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+}
